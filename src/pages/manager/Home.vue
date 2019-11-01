@@ -1,7 +1,7 @@
 <template>
   <div class="home">
       <img style="width:100%;margin:0 auto" src="../../assets/images/home_02.png" alt="">
-      <van-loading v-show="visible" type="spinner" color="#1989fa" size="30px" style="padding:240px 0;text-align:center;">加载中...</van-loading>
+      <!-- <van-loading v-show="visible" type="spinner" color="#1989fa" size="30px" style="padding:240px 0;text-align:center;">加载中...</van-loading> -->
   <!-- 待接单 -->
       <van-panel :title="item.customer.realname" :status="item.status" v-for="item in orderStatusFilter('待接单')" :key="item.b" >
         <div style="font-size:14px;color:#5a5e5e;">
@@ -63,14 +63,14 @@ import {mapState,mapActions,mapGetters} from 'vuex'
 export default {
   data(){
     return {
-      visible:true
+      // visible:true
     }
   },
   created(){
-    setTimeout(()=>{
+    // setTimeout(()=>{
       this.findAllOrdersByWaiter();
-      this.visible = false;
-    },500)
+      // this.visible = false;
+    // },500)
   },
   computed:{
     ...mapState("order",["orders"]),
