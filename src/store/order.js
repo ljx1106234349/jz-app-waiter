@@ -7,7 +7,7 @@ export default {
     orders:[]
   },
   getters:{
-    orderStatusFilter(state){3456789-FocusNavigationEvent
+    orderStatusFilter(state){
       return (status)=>{
         return state.orders.filter(item=>item.status === status)
       }
