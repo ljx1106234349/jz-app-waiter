@@ -3,7 +3,6 @@
     <div class="nav">订单</div>
     <div>
       <van-tabs v-model="activeName" :swipe-threshold="5" sticky>
-    <van-loading v-show="visible" type="spinner" color="#1989fa" size="30px" style="padding:300px 0;text-align:center;">加载中...</van-loading>
 
         <!-- 所有订单 -->
         <van-tab title="所有订单" name="所有订单"  type="card" >
@@ -158,14 +157,11 @@ export default {
   data(){
     return {
       activeName: 'a',
-      visible:true
+      
     }
   },
   created(){
-    setTimeout(()=>{
-      this.findAllOrdersByWaiter();
-      this.visible = false;
-    },500)
+    this.findAllOrdersByWaiter();
   },
   computed:{
     ...mapState("order",["orders","info"]),

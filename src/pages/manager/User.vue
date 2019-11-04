@@ -17,7 +17,9 @@
     </div>
     <van-row>
       <van-col :span="8"  style="text-align:center;color:#4d5050">我的收入</van-col>
-      <van-col :span="14" style="text-align:right;font-size:18px;color:#4d5050">
+      <van-col :span="10" style="text-align:right;font-size:18px;color:red">￥：{{test}}</van-col>
+      <van-col :span="4" style="text-align:right;font-size:18px;color:#4d5050">
+        
         <van-icon name="arrow" />
       </van-col>
     </van-row>
@@ -40,20 +42,39 @@ import {mapState,mapActions,mapGetters} from 'vuex'
 export default {
   data(){
     return {
-
+      test:0
     }
+  },
+  created(){
+    this.initData();
+    // this.totest();
   },
   computed:{
     ...mapState("user",["info"]),
+    ...mapState('order',['orders']),
+    
+    // ...mapGetters("order",["testFilter"])
   },
   methods:{
     ...mapActions('user',['logout']),
+    ...mapActions('order',['findAllOrdersByWaiter']),
     logoutHandler(){
       this.logout()
       .then(()=>{
         this.$router.push({path:'/'})
       })
+    },
+    initData(){
+      this.findAllOrdersByWaiter()
+      .then((response)=>{
+        response.data.forEach((item)=>{
+          if(item.status === '已完成'){
+            this.test += item.total;
+          }
+        })
+      })
     }
+    
   }
 }
 </script>

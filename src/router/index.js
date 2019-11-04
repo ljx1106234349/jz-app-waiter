@@ -29,7 +29,7 @@ const routes = [
       } else {
         Toast("token失效")
         // 跳转到登录
-        next({path:'/login'})
+        next({path:'/'})
       }
     },
     children:[{

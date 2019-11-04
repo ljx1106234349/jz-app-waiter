@@ -11,7 +11,8 @@ export default {
       return (status)=>{
         return state.orders.filter(item=>item.status === status)
       }
-    }
+    },
+    
   },
   mutations:{
     refreshOrders(state, orders){
@@ -30,6 +31,7 @@ export default {
       })
       // console.log(response.data);
       commit("refreshOrders",response.data);
+      return response;
     },
     // 接受订单
     async acceptOrder({dispatch},orderId){
