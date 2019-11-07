@@ -27,7 +27,8 @@
           required
         />
         <van-field>
-          <van-button slot="button" size="small" type="info" @click="loginHandler" plain>登录</van-button>
+          <van-button slot="button" size="small" type="primary" @click="loginHandler" style="margin-right:10px;" plain>登录</van-button>
+          <van-button slot="button" size="small" type="info" @click="AddUserHandler" plain>注册</van-button>
         </van-field>
       </van-cell-group>
     </div>
@@ -51,6 +52,9 @@ import {mapActions} from 'vuex'
           //跳转到首页
           this.$router.push({path:'/manager/home'})
         })
+      },
+      AddUserHandler(){
+        this.$router.push({path:'/adduser'})
       }
     }
   }
