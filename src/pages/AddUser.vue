@@ -62,7 +62,13 @@ export default {
   data(){
     return {
       form:{
-        enabled:false
+        enabled:false,
+        status:'待审核',
+        idCard: '1524781467415874',
+        bankCard: '10401425145214',
+        idcardPhotoPositive: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1572534120097&di=d3067ad83807932522ce5395907e8249&imgtype=0&src=http%3A%2F%2Ff.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2Ff2deb48f8c5494ee25dd85502df5e0fe98257ef8.jpg',
+        idcardPhotoNegative: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3132756538,1607808707&fm=15&gp=0.jpg',
+        bankCardPhoto: 'http://img.sccnn.com/bimg/336/675.jpg',
       }
     }
   },

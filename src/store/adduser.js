@@ -15,7 +15,7 @@ export default {
   actions: {
     // 添加员工信息
     async saveWaiter({commit},form){
-      console.log("====",form);
+      // console.log("====",form);
       let response = await post('/waiter/saveOrUpdate',form)
       return response;
       
