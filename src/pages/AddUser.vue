@@ -78,7 +78,7 @@ export default {
       this.$router.push({path:'/'})
     },
     AddUserHandler(form){
-      console.log(this.form);
+      // console.log(this.form);
       this.saveWaiter(this.form)
       .then((response)=>{
         this.$notify({ 
